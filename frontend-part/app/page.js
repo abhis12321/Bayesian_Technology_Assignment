@@ -1,10 +1,15 @@
+"use client"
 import React from 'react'
 import SearchForm from './__components/SearchForm'
 
-export default function page() {
+export default function page() {  
+  const renderSearchData = (data) => {
+    console.log(data);
+  }
+
   return (
     <div className=''>
-      <SearchForm />
+      <SearchForm renderSearchData={renderSearchData}/>
     </div>
   )
 }
