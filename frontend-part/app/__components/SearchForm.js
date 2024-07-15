@@ -55,7 +55,7 @@ const json_data = {
   }
 
     return (
-        <div className='flex flex-col items-center justify-center min-h-[100vh] w-full'>
+        <div className='flex flex-col items-center justify-center w-full py-10'>
             <div className="py-4">
                 <h1 className="text-4xl font-medium">Choose origin and Destination Airports:</h1>
             </div>
