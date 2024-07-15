@@ -1,13 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import axios from 'axios'
 
 
-export default function SearchForm({renderSearchData}) {
-    const [origin , setOrigin] = useState("JFK");
-    const [destination , setDestination] = useState("DEL");
-    const [cabin , setCabin] = useState("Economy");
-
-    
+export default function SearchForm({renderSearchData , origin , setOrigin , destination , setDestination , cabin , setCabin}) {
 const headers = {
     'accept': 'application/json, text/plain, */*',
     'accept-language': 'en-US,en;q=0.9,hi;q=0.8',
@@ -46,10 +41,10 @@ const json_data = {
     e.preventDefault();    
     axios.post('https://cardgpt.in/apitest', json_data, { headers })
         .then(response => response.data)
-        .then(response => response.data)
+        .then(responseData => responseData.data)
         .then(data => {
             if(data.length) {
-                renderSearchData(data);
+                renderSearchData(data , origin , destination);
             } else {
                 console.log("try again");
             }
